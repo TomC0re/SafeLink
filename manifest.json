@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "SafeLink",
+  "version": "1.0",
+  "description": "SafeLink — это расширение для браузера, которое помогает пользователям безопасно переходить по коротким ссылкам. Оно анализирует короткие URL-адреса, декодирует их и показывает конечный адрес перед переходом. Пользователь может подтвердить переход или отказаться, если ссылка вызывает подозрения. Плагин также позволяет редактировать список доменов коротких ссылок для более точной работы. Внимание: это расширение работает только на версии Firefox 109.0 и выше.",
+  "author": "Анатоий Корчагин",
+  "homepage_url": "https://github.com/TomC0re",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "action": {
+    "default_popup": "warning.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "SafeLink"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "safelink@tomc0re.com",
+      "strict_min_version": "109.0"
+    }
+  }
+}
